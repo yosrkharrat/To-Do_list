@@ -87,3 +87,44 @@ button:hover {
 p {
     margin: 0;
 }
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+    color: black;
+    text-align: center;
+    padding: 5px;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+@media only screen and (max-width: 800px) {
+    body {
+        background-color: #212529;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+    }
+
+    .liste {
+        width: 100%;
+        border-bottom: solid 1px #ced4da;
+    }
+
+    .todo {
+        font-size: 35px;
+        position: fixed;
+        top: 15px;
+        left: 0;
+        right: 0;
+    }
+
+    .content {
+        width: 100%;
+    }
+}

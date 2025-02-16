@@ -1,19 +1,19 @@
-var list = document.getElementById("elements"); 
+var list = document.querySelector("#elements"); 
 var elements = [];
 
 list.addEventListener("click", (e) => {
-    if (e.target.dataset) {
-        const index = Number(e.target.dataset.index);  
+    if (e.target.tagName=='SPAN') {
+        const index = Number(e.target.id);  
         elements.splice(index, 1);
         render();
     }
 });
 
 function getNewElement() {
-    const name = document.getElementById("name").value;
-    const content = document.getElementById("content-input").value;
-    document.getElementById("name").value = '';
-    document.getElementById("content-input").value = '';
+    const name = document.querySelector("#name").value;
+    const content = document.querySelector("#content-input").value;
+    document.querySelector("#name").value = '';
+    document.querySelector("#content-input").value = '';
     return {
         name: name,
         content: content
@@ -28,7 +28,7 @@ function addToDo() {
     const todo = elements.map((current, index) => {
         return `<div class="elem">
                     <p>${current.name} : ${current.content}</p>
-                    <span data-index="${index}" class="material-symbols-outlined center">delete</span>
+                    <span id="${index}" class="material-symbols-outlined center">delete</span>
                 </div>`;
     });
     return todo;
